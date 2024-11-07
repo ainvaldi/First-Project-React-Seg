@@ -8,6 +8,7 @@ import UsersContainer from './components/Users/UsersContainer'
 import { Menubar } from 'primereact/menubar'
 import CreateUser from './components/Users/CreateUser'
 import Home from './components/Home'
+import LoginUser from './components/Users/LoginUser'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path='/usuarios' element={<UsersContainer />} />
         <Route path='/nuevo-usuario' element={<CreateUser />} />
+        <Route path='/inicio-sesion' element={<LoginUser />} />
         <Route path='/' element={<Home />} />
       </Routes>
     </BrowserRouter>

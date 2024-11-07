@@ -6,9 +6,17 @@ const UsersContainer = () => {
     const [dataUsers, setDataUsers] = useState([]),
         [loadingUsers, setLoadingUsers] = useState(true);
 
+    const token = JSON.parse(localStorage.getItem('token'))
+
     const getDataUsers = async () => {
         try {
-            const response = await fetch("https://jsonplaceholder.typicode.com/users")
+            const response = await fetch("http://127.0.0.1:5000/users",
+                {
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                }
+            )
             console.log("response", response)
             if (!response.ok) {
                 console.log("Hubo un error en la peticion")
